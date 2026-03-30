@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Services by Baba Advertisers Srinagar – Premium Printing, Graphic Designing, and Event Branding solutions in Jammu & Kashmir."/>
+  <title>Services | Baba Advertisers Srinagar</title>
+  <link rel="canonical" href="https://babaadvertiserssrinagar.com/services.html"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .svc-main-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-bottom:5rem; }
+    .svc-main-grid:last-child { margin-bottom:0; }
+    .svc-main-grid.reverse { direction:rtl; }
+    .svc-main-grid.reverse > * { direction:ltr; }
+
+    .svc-visual {
+      border-radius:12px; overflow:hidden; position:relative;
+      aspect-ratio:4/3;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:var(--shadow-lg);
+    }
+    .svc-visual-inner {
+      width:100%; height:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:1rem; padding:2rem;
+    }
+    .svc-visual-icon { font-size:4rem; }
+    .svc-visual-label { font-family:'Cinzel',serif; font-size:1rem; color:var(--white); letter-spacing:2px; text-transform:uppercase; }
+
+    .svc-content { padding-top:1rem; }
+    .svc-content .section-tag { margin-bottom:0.4rem; }
+    .svc-content h2 { font-family:'Cinzel',serif; font-size:clamp(1.6rem,3.5vw,2.2rem); font-weight:700; color:var(--olive-deep); margin-bottom:0.5rem; line-height:1.15; }
+    .svc-content .divider { margin:1rem 0 1.5rem; }
+    .svc-content p { color:var(--text-muted); line-height:1.85; margin-bottom:1rem; font-size:0.95rem; }
+
+    .svc-list-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 1.5rem; margin:1.5rem 0; }
+    .svc-list-item { display:flex; align-items:center; gap:0.6rem; font-size:0.83rem; color:var(--text-body); padding:0.4rem 0; border-bottom:1px solid var(--border-light); }
+    .svc-list-item::before { content:'✓'; width:18px; height:18px; background:var(--olive); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.65rem; font-weight:700; flex-shrink:0; }
+
+    .svc-price-badge {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      background:var(--off-white); border:1px solid var(--border); border-radius:6px;
+      padding:0.6rem 1.2rem; font-size:0.78rem; color:var(--olive-dark); font-weight:600;
+      margin-bottom:1.5rem;
+    }
+
+    /* PROCESS */
+    .process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+    .process-steps::before { content:''; position:absolute; top:32px; left:12.5%; right:12.5%; height:2px; background:linear-gradient(to right,var(--olive),var(--olive-pale)); }
+    .process-step { text-align:center; padding:1.5rem 1rem; position:relative; }
+    .ps-num {
+      width:64px; height:64px; border-radius:50%;
+      background:var(--olive); color:var(--white);
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Cinzel',serif; font-size:1.2rem; font-weight:700;
+      margin:0 auto 1rem; position:relative; z-index:1;
+      box-shadow:0 4px 16px rgba(85,107,47,0.3);
+    }
+    .ps-title { font-family:'Cinzel',serif; font-size:0.85rem; color:var(--olive-deep); margin-bottom:0.4rem; }
+    .ps-desc { font-size:0.78rem; color:var(--text-muted); line-height:1.6; }
+
+    /* PRICING CARDS */
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .price-card {
+      background:var(--white); border:1px solid var(--border-light);
+      border-radius:10px; padding:2.5rem 2rem; text-align:center;
+      transition:transform 0.3s,box-shadow 0.3s; position:relative; overflow:hidden;
+    }
+    .price-card.featured { border-color:var(--olive); border-width:2px; }
+    .price-card.featured::before { content:'Most Popular'; position:absolute; top:1rem; right:-1.5rem; background:var(--olive); color:white; font-size:0.65rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:0.3rem 2rem; transform:rotate(15deg); }
+    .price-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+    .price-icon { font-size:2.5rem; margin-bottom:0.8rem; }
+    .price-name { font-family:'Cinzel',serif; font-size:1rem; color:var(--olive-deep); margin-bottom:0.5rem; }
+    .price-desc { font-size:0.8rem; color:var(--text-muted); margin-bottom:1.5rem; }
+    .price-list { text-align:left; margin-bottom:2rem; }
+    .price-list li { font-size:0.8rem; color:var(--text-body); padding:0.35rem 0; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid var(--border-light); }
+    .price-list li::before { content:'◆'; font-size:0.4rem; color:var(--olive); flex-shrink:0; }
+
+    @media(max-width:900px){
+      .svc-main-grid{grid-template-columns:1fr;}
+      .svc-main-grid.reverse{direction:ltr;}
+      .process-steps{grid-template-columns:1fr 1fr;gap:1.5rem;}
+      .process-steps::before{display:none;}
+      .pricing-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+<div id="preloader"><div class="pl-logo-wrap"><div class="pl-logo">BP</div><div class="pl-ring"></div></div><p class="pl-text">Loading…</p></div>
+<nav id="navbar">
+  <a href="index.html" class="nav-brand"><div class="bp-logo">BP</div><div class="nav-name-block"><div class="nav-title">Baba Advertisers</div><div class="nav-sub">Powered by Baba Prints</div></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html" class="mob-cta">Contact Us</a></div>
+
+<div class="page-main">
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span> Services</div>
+      <h1>Our Services</h1>
+      <p>Comprehensive printing, design, and branding solutions for businesses of all sizes</p>
+    </div>
+  </div>
+
+  <!-- SERVICE 1: PRINTING -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="svc-main-grid">
+        <div class="svc-visual reveal-left" style="background:linear-gradient(135deg,var(--olive-deep),var(--olive));">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-icon">🖨️</div>
+            <div class="svc-visual-label">Printing Services</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Business Cards</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Banners</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Brochures</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Posters</span>
+            </div>
+          </div>
+        </div>
+        <div class="svc-content reveal-right">
+          <div class="section-tag">Service 01</div>
+          <h2>Printing <span style="color:var(--olive);">Excellence</span></h2>
+          <div class="divider"></div>
+          <p>Our printing division, powered by Baba Prints, delivers exceptional quality across all formats — from compact business cards to sprawling outdoor hoardings. We use premium materials and advanced machinery to ensure every print job meets the highest standards.</p>
+          <p>Whether you need 50 flyers or a full commercial print run, we handle every order with the same precision and care.</p>
+          <div class="svc-list-grid">
+            <span class="svc-list-item">Business Cards</span>
+            <span class="svc-list-item">Brochures &amp; Catalogues</span>
+            <span class="svc-list-item">Flex &amp; Vinyl Banners</span>
+            <span class="svc-list-item">Posters &amp; Flyers</span>
+            <span class="svc-list-item">Packaging &amp; Labels</span>
+            <span class="svc-list-item">Stickers &amp; Decals</span>
+            <span class="svc-list-item">Letterheads &amp; Envelopes</span>
+            <span class="svc-list-item">ID Cards &amp; Badges</span>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Request a Quote →</a>
+        </div>
+      </div>
+
+      <!-- SERVICE 2: DESIGNING -->
+      <div class="svc-main-grid reverse" style="margin-top:2rem;">
+        <div class="svc-visual reveal-right" style="background:linear-gradient(135deg,var(--olive-dark),var(--olive-mid));">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-icon">🎨</div>
+            <div class="svc-visual-label">Design Services</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Logo Design</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Social Media</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Brand Identity</span>
+              <span style="background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">UI/UX</span>
+            </div>
+          </div>
+        </div>
+        <div class="svc-content reveal-left">
+          <div class="section-tag">Service 02</div>
+          <h2>Creative <span style="color:var(--olive);">Designing</span></h2>
+          <div class="divider"></div>
+          <p>Great design is the backbone of every successful brand. Our design team creates visually stunning, strategically crafted designs that communicate your brand message with clarity and impact — from logos to complete brand identity systems.</p>
+          <p>We blend creativity with market understanding to deliver designs that don't just look great but also drive results.</p>
+          <div class="svc-list-grid">
+            <span class="svc-list-item">Logo &amp; Brand Identity</span>
+            <span class="svc-list-item">Social Media Graphics</span>
+            <span class="svc-list-item">Packaging Design</span>
+            <span class="svc-list-item">Marketing Collaterals</span>
+            <span class="svc-list-item">UI/UX Design</span>
+            <span class="svc-list-item">Infographics</span>
+            <span class="svc-list-item">Menu &amp; Catalog Design</span>
+            <span class="svc-list-item">Illustrations</span>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Start a Design Project →</a>
+        </div>
+      </div>
+
+      <!-- SERVICE 3: EVENT BRANDING -->
+      <div class="svc-main-grid" style="margin-top:2rem;">
+        <div class="svc-visual reveal-left" style="background:linear-gradient(135deg,var(--olive),var(--olive-light));">
+          <div class="svc-visual-inner">
+            <div class="svc-visual-icon">🎪</div>
+            <div class="svc-visual-label">Event Branding</div>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:0.5rem;">
+              <span style="background:rgba(255,255,255,0.15);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Stage Design</span>
+              <span style="background:rgba(255,255,255,0.15);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Backdrops</span>
+              <span style="background:rgba(255,255,255,0.15);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Exhibition</span>
+              <span style="background:rgba(255,255,255,0.15);padding:0.3rem 0.8rem;border-radius:99px;font-size:0.7rem;color:var(--white);">Merchandise</span>
+            </div>
+          </div>
+        </div>
+        <div class="svc-content reveal-right">
+          <div class="section-tag">Service 03</div>
+          <h2>Event <span style="color:var(--olive);">Branding</span></h2>
+          <div class="divider"></div>
+          <p>Turn your event into an unforgettable brand experience. From intimate corporate gatherings to large-scale public events, we handle all aspects of visual branding to create a cohesive, immersive atmosphere that leaves a lasting impression on attendees.</p>
+          <p>Our event branding team has transformed hundreds of events across Kashmir into remarkable brand showcases.</p>
+          <div class="svc-list-grid">
+            <span class="svc-list-item">Stage &amp; Backdrop Design</span>
+            <span class="svc-list-item">Event Signage</span>
+            <span class="svc-list-item">Exhibition Stands</span>
+            <span class="svc-list-item">Promotional Merchandise</span>
+            <span class="svc-list-item">Photo Booth Props</span>
+            <span class="svc-list-item">Wayfinding Signage</span>
+            <span class="svc-list-item">Event Programs</span>
+            <span class="svc-list-item">Branded Gifts</span>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Plan Your Event →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section-tinted">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+        <div class="section-tag" style="justify-content:center;">How We Work</div>
+        <h2 class="section-title">Our Simple <span class="accent">Process</span></h2>
+        <div class="divider divider-center"></div>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal"><div class="ps-num">01</div><h4 class="ps-title">Consultation</h4><p class="ps-desc">We listen to your needs, understand your brand, and define the project scope together.</p></div>
+        <div class="process-step reveal"><div class="ps-num">02</div><h4 class="ps-title">Concept</h4><p class="ps-desc">Our team creates initial concepts and designs tailored to your specific requirements.</p></div>
+        <div class="process-step reveal"><div class="ps-num">03</div><h4 class="ps-title">Refinement</h4><p class="ps-desc">We refine the chosen concept based on your feedback until it's perfect.</p></div>
+        <div class="process-step reveal"><div class="ps-num">04</div><h4 class="ps-title">Delivery</h4><p class="ps-desc">Final files or printed materials delivered to you on time, every time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="section section-light">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+        <div class="section-tag" style="justify-content:center;">Packages</div>
+        <h2 class="section-title">Choose Your <span class="accent">Package</span></h2>
+        <div class="divider divider-center"></div>
+        <p class="lead lead-center">Flexible packages for every business size and budget. Contact us for custom pricing.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal"><div class="price-icon">🌱</div><h3 class="price-name">Starter</h3><p class="price-desc">Perfect for startups and small businesses taking their first step.</p><ul class="price-list"><li>Logo Design</li><li>Business Card (250 pcs)</li><li>Letterhead Design</li><li>2 Revisions</li></ul><a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a></div>
+        <div class="price-card featured reveal"><div class="price-icon">🚀</div><h3 class="price-name">Growth</h3><p class="price-desc">For growing businesses ready to make a bigger brand statement.</p><ul class="price-list"><li>Full Brand Identity</li><li>Business Cards (500 pcs)</li><li>Brochure Design + Print</li><li>Social Media Kit</li><li>5 Revisions</li></ul><a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a></div>
+        <div class="price-card reveal"><div class="price-icon">👑</div><h3 class="price-name">Enterprise</h3><p class="price-desc">Full-scale branding and print solution for established businesses.</p><ul class="price-list"><li>Complete Brand Overhaul</li><li>All Print Collaterals</li><li>Event Branding Package</li><li>Signage &amp; Displays</li><li>Unlimited Revisions</li></ul><a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Contact Us</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Ready to Get Started?</h2>
+    <p>Contact us for a free consultation and custom quote tailored to your project.</p>
+    <div class="cta-strip-btns"><a href="contact.html" class="btn btn-white">Free Consultation</a><a href="portfolio.html" class="btn btn-outline-white">View Portfolio</a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="bp-logo-lg">BP</div><h3>Baba Advertisers Srinagar</h3><p style="font-size:0.72rem;letter-spacing:1px;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">POWERED BY BABA PRINTS</p><p>Premium printing and branding in Srinagar, J&amp;K.</p><div class="footer-social"><a href="https://www.linkedin.com/in/mohammad-yamin-baba-5975b9311" target="_blank">in</a><a href="https://www.instagram.com/m.yaminbaba" target="_blank">ig</a><a href="https://www.facebook.com" target="_blank">fb</a><a href="https://wa.me/916006551914" target="_blank">wa</a></div></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Printing</a></li><li><a href="services.html">Graphic Design</a></li><li><a href="services.html">Event Branding</a></li><li><a href="services.html">Signage</a></li><li><a href="services.html">Packaging</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:6006551914">📞 6006551914</a></li><li><a href="tel:9541578008">📞 9541578008</a></li><li><a href="mailto:babaadvertiserssrinagar@gmail.com">✉️ Email Us</a></li><li><a href="contact.html">📍 Khommoh, Srinagar 191101</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="footerYear"></span> Baba Advertisers Srinagar. All rights reserved.</span><span>Powered by <a href="#">Baba Prints</a></span></div>
+  </div>
+</footer>
+<a href="https://wa.me/916006551914" target="_blank" class="wa-float"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-tip">Chat on WhatsApp</span></a>
+<button id="backToTop">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

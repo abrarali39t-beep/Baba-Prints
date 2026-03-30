@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://babaadvertiserssrinagar.com/sitemap.xml
+
+# Baba Advertisers Srinagar
+# Powered by Baba Prints
+# Contact: babaadvertiserssrinagar@gmail.com

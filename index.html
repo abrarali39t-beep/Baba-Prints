@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="Baba Advertisers Srinagar – Premium Printing, Designing & Event Branding. Innovation at your fingertips. Powered by Baba Prints."/>
+  <meta name="keywords" content="Baba Advertisers, Srinagar, Printing, Designing, Event Branding, Baba Prints, Mohammad Yamin Baba, Kashmir advertising"/>
+  <meta name="author" content="Mohammad Yamin Baba"/>
+  <meta property="og:title" content="Baba Advertisers Srinagar | Innovation at Your Fingertips"/>
+  <meta property="og:description" content="Where imagination becomes touchable. Premium printing and branding solutions in Srinagar."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://babaadvertiserssrinagar.com/"/>
+  <title>Baba Advertisers Srinagar | Innovation at Your Fingertips</title>
+  <link rel="canonical" href="https://babaadvertiserssrinagar.com/"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--olive-deep) 0%, var(--olive-dark) 55%, var(--olive) 100%);
+      position: relative; overflow: hidden; padding: 6rem 2rem 4rem;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 80% 20%, rgba(139,164,70,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(212,160,23,0.08) 0%, transparent 40%);
+    }
+    .hero-dots {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      position: relative; max-width: 1140px; margin: 0 auto; width: 100%;
+    }
+    .hero-text { color: var(--white); }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.4rem 1rem; border-radius: 99px;
+      font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--olive-pale); margin-bottom: 1.5rem;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--olive-light); border-radius: 50%; }
+    .hero-h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 900; line-height: 1.0; margin-bottom: 0.5rem;
+    }
+    .hero-h1 .name-first { color: var(--olive-pale); }
+    .hero-h1 .name-last { color: var(--white); }
+    .hero-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: rgba(255,255,255,0.65); margin-bottom: 1.8rem;
+    }
+    .hero-tagline-wrap { margin-bottom: 2.5rem; }
+    .hero-tagline-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--olive-pale); margin-bottom: 0.3rem;
+    }
+    .hero-tagline-sub { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-style: italic; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12); }
+    .hstat-num { font-family:'Cinzel',serif; font-size:2rem; font-weight:900; color:var(--white); line-height:1; }
+    .hstat-label { font-size:0.68rem; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:0.2rem; }
+
+    /* HERO IMAGE */
+    .hero-image-side { display:flex; align-items:center; justify-content:center; }
+    .hero-img-frame { position:relative; width:min(320px,80vw); height:min(320px,80vw); }
+    .img-ring-outer {
+      position:absolute; inset:-20px;
+      border:1px solid rgba(200,216,154,0.3); border-radius:50%;
+      animation: rotRing 14s linear infinite;
+    }
+    .img-ring-outer::before {
+      content:''; position:absolute; top:-5px; left:50%; transform:translateX(-50%);
+      width:10px; height:10px; background:var(--olive-pale); border-radius:50%;
+    }
+    .img-ring-inner { position:absolute; inset:-6px; border:2px solid rgba(139,164,70,0.4); border-radius:50%; }
+    .img-circle {
+      width:100%; height:100%; border-radius:50%; overflow:hidden;
+      border:4px solid var(--olive-light);
+      box-shadow:0 0 0 8px rgba(139,164,70,0.12), 0 20px 60px rgba(42,52,24,0.4);
+      background:var(--olive-dark);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .hero-monogram { text-align:center; }
+    .hero-monogram-letters { font-family:'Cinzel',serif; font-size:4.5rem; font-weight:900; color:var(--olive-pale); line-height:1; }
+    .hero-monogram-sub { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
+    @keyframes rotRing { to{ transform:rotate(360deg); } }
+
+    /* floating cards around image */
+    .hero-card {
+      position:absolute;
+      background:rgba(255,255,255,0.95); border-radius:8px;
+      padding:0.7rem 1rem; box-shadow:0 8px 30px rgba(42,52,24,0.25);
+      font-size:0.75rem; color:var(--text-dark); display:flex; align-items:center; gap:0.5rem;
+      white-space:nowrap;
+    }
+    .hero-card-icon { font-size:1.2rem; }
+    .hero-card-label { font-weight:700; font-size:0.7rem; color:var(--olive); display:block; }
+    .hero-card-val { font-size:0.72rem; color:var(--text-muted); }
+    .hero-card-1 { bottom:-1.5rem; left:-2rem; animation: float1 4s ease-in-out infinite; }
+    .hero-card-2 { top:1rem; right:-2.5rem; animation: float2 4.5s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+    /* scroll indicator */
+    .scroll-hint {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:0.4rem;
+      color:rgba(255,255,255,0.35); font-size:0.62rem; letter-spacing:2px; text-transform:uppercase;
+    }
+    .scroll-track { width:20px; height:32px; border:1.5px solid rgba(255,255,255,0.25); border-radius:99px; display:flex; justify-content:center; padding-top:5px; }
+    .scroll-dot { width:3px; height:6px; background:rgba(255,255,255,0.4); border-radius:99px; animation:sdot 1.6s ease infinite; }
+    @keyframes sdot { 0%,100%{transform:translateY(0);opacity:1} 80%{transform:translateY(8px);opacity:0} }
+
+    /* WHY US */
+    .features-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+    .feat-card {
+      background:var(--white); border:1px solid var(--border-light); border-radius:8px;
+      padding:2rem 1.5rem; text-align:center;
+      transition:transform 0.3s,box-shadow 0.3s;
+    }
+    .feat-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+    .feat-icon { font-size:2.2rem; margin-bottom:1rem; }
+    .feat-title { font-family:'Cinzel',serif; font-size:0.95rem; color:var(--olive-deep); margin-bottom:0.5rem; }
+    .feat-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.7; }
+
+    /* SERVICES PREVIEW */
+    .svc-preview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .svc-prev {
+      border-radius:8px; overflow:hidden; position:relative;
+      background:var(--off-white); border:1px solid var(--border-light);
+      padding:2.5rem 2rem; transition:all 0.35s;
+    }
+    .svc-prev:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:var(--olive); }
+    .svc-prev-num { font-family:'Cinzel',serif; font-size:3.5rem; font-weight:900; color:rgba(85,107,47,0.08); line-height:1; margin-bottom:0.3rem; }
+    .svc-prev-icon { font-size:2rem; margin-bottom:1rem; }
+    .svc-prev-title { font-family:'Cinzel',serif; font-size:1.1rem; color:var(--olive-deep); margin-bottom:0.6rem; }
+    .svc-prev-desc { font-size:0.85rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.2rem; }
+    .svc-prev-link { font-size:0.75rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--olive); display:inline-flex; align-items:center; gap:0.4rem; transition:gap 0.3s; }
+    .svc-prev:hover .svc-prev-link { gap:0.8rem; }
+
+    /* TESTIMONIAL */
+    .testimonial-wrap {
+      background:linear-gradient(135deg,var(--olive-deep),var(--olive-dark));
+      border-radius:12px; padding:3.5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+    }
+    .testi-quote { font-family:'Playfair Display',serif; font-size:clamp(1.2rem,3vw,1.6rem); font-style:italic; color:var(--white); line-height:1.6; margin-bottom:1.5rem; }
+    .testi-author { font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; color:var(--olive-pale); }
+    .testi-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .tstat { text-align:center; padding:1.5rem; background:rgba(255,255,255,0.06); border-radius:8px; }
+    .tstat-num { font-family:'Cinzel',serif; font-size:2.2rem; font-weight:900; color:var(--white); }
+    .tstat-lbl { font-size:0.7rem; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-top:0.3rem; }
+
+    /* CTA STRIP */
+    .cta-strip { background:var(--olive); padding:4rem 2rem; text-align:center; }
+    .cta-strip h2 { font-family:'Cinzel',serif; font-size:clamp(1.5rem,3.5vw,2.2rem); color:var(--white); margin-bottom:0.8rem; }
+    .cta-strip p { color:rgba(255,255,255,0.75); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto; }
+    .cta-strip-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;text-align:center;}
+      .hero-image-side{order:-1;margin-bottom:1rem;}
+      .hero-btns,.hero-stats{justify-content:center;}
+      .hero-card{display:none;}
+      .features-grid{grid-template-columns:1fr 1fr;}
+      .svc-preview-grid{grid-template-columns:1fr;}
+      .testimonial-wrap{grid-template-columns:1fr;}
+      .testi-stats{grid-template-columns:repeat(4,1fr);}
+    }
+    @media(max-width:640px){
+      .features-grid{grid-template-columns:1fr;}
+      .hero-stats{gap:1.5rem;}
+      .testi-stats{grid-template-columns:1fr 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-logo-wrap">
+    <div class="pl-logo">BP</div>
+    <div class="pl-ring"></div>
+  </div>
+  <p class="pl-text">Baba Advertisers Srinagar</p>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="bp-logo">BP</div>
+    <div class="nav-name-block">
+      <div class="nav-title">Baba Advertisers</div>
+      <div class="nav-sub">Powered by Baba Prints</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html" class="mob-cta">Contact Us</a>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-grid">
+
+    <div class="hero-text" style="animation:fadeUp 0.9s ease both;">
+      <div class="hero-badge"><span></span> Srinagar's Premier Branding Studio</div>
+      <h1 class="hero-h1">
+        <span class="name-first">Mohammad</span><br>
+        <span class="name-last">Yamin Baba</span>
+      </h1>
+      <p class="hero-role">Founder &amp; CEO — Baba Advertisers Srinagar</p>
+      <div class="hero-tagline-wrap">
+        <p class="hero-tagline-main">"Innovation at your fingertips"</p>
+        <p class="hero-tagline-sub">Where imagination becomes touchable</p>
+      </div>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-white">Get in Touch</a>
+        <a href="services.html" class="btn btn-outline-white">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-num"><span class="counter" data-target="500" data-suffix="+">0+</span></div><div class="hstat-label">Projects Done</div></div>
+        <div class="hstat"><div class="hstat-num"><span class="counter" data-target="10" data-suffix="+">0+</span></div><div class="hstat-label">Years Experience</div></div>
+        <div class="hstat"><div class="hstat-num"><span class="counter" data-target="200" data-suffix="+">0+</span></div><div class="hstat-label">Happy Clients</div></div>
+      </div>
+    </div>
+
+    <div class="hero-image-side" style="animation:fadeUp 0.9s 0.2s ease both;">
+      <div class="hero-img-frame">
+        <div class="img-ring-outer"></div>
+        <div class="img-ring-inner"></div>
+        <div class="img-circle passport-img-target">
+          <div class="hero-monogram">
+            <div class="hero-monogram-letters">MYB</div>
+            <div class="hero-monogram-sub">Founder &amp; CEO</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card-1">
+          <span class="hero-card-icon">🖨️</span>
+          <div><span class="hero-card-label">Premium Print</span><span class="hero-card-val">High-quality output</span></div>
+        </div>
+        <div class="hero-card hero-card-2">
+          <span class="hero-card-icon">🏆</span>
+          <div><span class="hero-card-label">Award Winning</span><span class="hero-card-val">Trusted in Kashmir</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-track"><div class="scroll-dot"></div></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ═══════ WHY US ═══════ -->
+<section class="section section-light">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <div class="section-tag" style="justify-content:center;">Why Choose Us</div>
+      <h2 class="section-title">Built on <span class="accent">Excellence</span></h2>
+      <div class="divider divider-center"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal"><div class="feat-icon">🎯</div><h3 class="feat-title">Precision Quality</h3><p class="feat-desc">Every print and design delivered with meticulous attention to detail and premium materials.</p></div>
+      <div class="feat-card reveal"><div class="feat-icon">⚡</div><h3 class="feat-title">Fast Turnaround</h3><p class="feat-desc">Tight deadlines? We deliver without compromising on the quality you deserve.</p></div>
+      <div class="feat-card reveal"><div class="feat-icon">💡</div><h3 class="feat-title">Creative Vision</h3><p class="feat-desc">Innovative designs that make your brand stand out in the crowd of competition.</p></div>
+      <div class="feat-card reveal"><div class="feat-icon">🤝</div><h3 class="feat-title">Local Expertise</h3><p class="feat-desc">Deep roots in Srinagar — understanding the local market like no one else can.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ SERVICES PREVIEW ═══════ -->
+<section class="section section-tinted">
+  <div class="container">
+    <div style="margin-bottom:3rem;" class="reveal">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Our Core <span class="accent">Services</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="svc-preview-grid">
+      <div class="svc-prev reveal">
+        <div class="svc-prev-num">01</div>
+        <div class="svc-prev-icon">🖨️</div>
+        <h3 class="svc-prev-title">Printing</h3>
+        <p class="svc-prev-desc">High-fidelity printing for every need — from business cards to large-format banners — using premium materials and state-of-the-art machinery.</p>
+        <a href="services.html" class="svc-prev-link">Learn More →</a>
+      </div>
+      <div class="svc-prev reveal">
+        <div class="svc-prev-num">02</div>
+        <div class="svc-prev-icon">🎨</div>
+        <h3 class="svc-prev-title">Designing</h3>
+        <p class="svc-prev-desc">Brand identity, graphic design, and digital visuals crafted to communicate your message powerfully and leave a lasting impression.</p>
+        <a href="services.html" class="svc-prev-link">Learn More →</a>
+      </div>
+      <div class="svc-prev reveal">
+        <div class="svc-prev-num">03</div>
+        <div class="svc-prev-icon">🎪</div>
+        <h3 class="svc-prev-title">Event Branding</h3>
+        <p class="svc-prev-desc">Transform your events into immersive branded experiences — stages, backdrops, signage, merchandise, and everything in between.</p>
+        <a href="services.html" class="svc-prev-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ TESTIMONIAL / STATS ═══════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="testimonial-wrap reveal">
+      <div>
+        <div style="font-size:3rem;margin-bottom:0.8rem;opacity:0.5;">"</div>
+        <p class="testi-quote">Baba Advertisers transformed our entire brand presence. The quality of their printing and the creativity of their designs is simply unmatched in all of Kashmir.</p>
+        <p class="testi-author">— Satisfied Client, Srinagar</p>
+      </div>
+      <div class="testi-stats">
+        <div class="tstat"><div class="tstat-num"><span class="counter" data-target="500" data-suffix="+">0</span></div><div class="tstat-lbl">Projects</div></div>
+        <div class="tstat"><div class="tstat-num"><span class="counter" data-target="200" data-suffix="+">0</span></div><div class="tstat-lbl">Clients</div></div>
+        <div class="tstat"><div class="tstat-num"><span class="counter" data-target="10" data-suffix="+">0</span></div><div class="tstat-lbl">Years</div></div>
+        <div class="tstat"><div class="tstat-num"><span class="counter" data-target="100" data-suffix="%">0</span></div><div class="tstat-lbl">Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CTA STRIP ═══════ -->
+<div class="cta-strip reveal">
+  <h2>Ready to Build Your Brand?</h2>
+  <p>Contact us today and let's create something extraordinary together in the heart of Kashmir.</p>
+  <div class="cta-strip-btns">
+    <a href="contact.html" class="btn btn-white">Start a Project</a>
+    <a href="portfolio.html" class="btn btn-outline-white">View Our Work</a>
+  </div>
+</div>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="bp-logo-lg">BP</div>
+        <h3>Baba Advertisers Srinagar</h3>
+        <p style="font-size:0.72rem;letter-spacing:1px;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">POWERED BY BABA PRINTS</p>
+        <p>Your trusted creative partner for printing, designing, and event branding in Srinagar, Jammu &amp; Kashmir.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/mohammad-yamin-baba-5975b9311" target="_blank" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/m.yaminbaba" target="_blank" title="Instagram">ig</a>
+          <a href="https://www.facebook.com" target="_blank" title="Facebook">fb</a>
+          <a href="https://wa.me/916006551914" target="_blank" title="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Printing</a></li>
+          <li><a href="services.html">Graphic Design</a></li>
+          <li><a href="services.html">Event Branding</a></li>
+          <li><a href="services.html">Signage</a></li>
+          <li><a href="services.html">Packaging</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:6006551914">📞 6006551914</a></li>
+          <li><a href="tel:9541578008">📞 9541578008</a></li>
+          <li><a href="mailto:babaadvertiserssrinagar@gmail.com">✉️ Email Us</a></li>
+          <li><a href="contact.html">📍 Khommoh, Srinagar</a></li>
+          <li><a href="contact.html">191101, J&amp;K</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footerYear"></span> Baba Advertisers Srinagar. All rights reserved.</span>
+      <span>Powered by <a href="#">Baba Prints</a> | Designed with ♥ in Kashmir</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/916006551914?text=Hello%20Baba%20Advertisers%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-tip">Chat on WhatsApp</span>
+</a>
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+<style>@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}</style>
+</body>
+</html>
