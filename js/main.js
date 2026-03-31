@@ -1,22 +1,22 @@
 /* ============================================================
-   BABA ADVERTISERS SRINAGAR — Global JavaScript
+   BABA ADVERTISERS SRINAGAR — Global JavaScript  (v2)
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── PRELOADER ──────────────────────────────────────────────
+  // ── PRELOADER (0.10 s) ────────────────────────────────────
   const preloader = document.getElementById('preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      setTimeout(() => preloader.classList.add('hidden'), 300);
+      setTimeout(() => preloader.classList.add('hidden'), 2500);
     });
   }
 
   // ── NAV ACTIVE STATE ───────────────────────────────────────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (link.getAttribute('href') === currentPage ||
+        (currentPage === '' && link.getAttribute('href') === 'index.html')) {
       link.classList.add('active');
     }
   });
@@ -47,19 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── SCROLL REVEAL ─────────────────────────────────────────
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+  // ── AOS-STYLE SCROLL REVEAL ───────────────────────────────
+  const allReveal = [
+    ...document.querySelectorAll('[data-aos]'),
+    ...document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+  ];
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), (entry.target.dataset.delay || 0));
-        revealObserver.unobserve(entry.target);
+        const el = entry.target;
+        const delay = parseInt(el.dataset.aosDelay || el.dataset.delay || 0);
+        setTimeout(() => el.classList.add('aos-animate', 'visible'), delay);
+        revealIO.unobserve(el);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el, i) => {
-    el.dataset.delay = (i % 4) * 80;
-    revealObserver.observe(el);
+  allReveal.forEach((el, i) => {
+    if (!el.dataset.aosDelay && !el.dataset.delay) el.dataset.delay = (i % 5) * 70;
+    revealIO.observe(el);
   });
 
   // ── BACK TO TOP ───────────────────────────────────────────
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yr = document.getElementById('footerYear');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // ── TRY LOADING PASSPORT IMAGE ────────────────────────────
+  // ── PASSPORT IMAGE ────────────────────────────────────────
   document.querySelectorAll('.passport-img-target').forEach(wrap => {
     const img = new Image();
     img.onload = () => {
@@ -94,25 +100,87 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── COUNTER ANIMATION ─────────────────────────────────────
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target, 10);
-    const duration = 1500;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) { current = target; clearInterval(timer); }
-      el.textContent = Math.floor(current) + (el.dataset.suffix || '');
-    }, 16);
-  }
-  const counterObserver = new IntersectionObserver(entries => {
+  const counterIO = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting && !e.target.dataset.counted) {
         e.target.dataset.counted = 'true';
-        animateCounter(e.target);
+        const target = parseInt(e.target.dataset.target, 10);
+        const suffix = e.target.dataset.suffix || '';
+        const step = target / (1400 / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          e.target.textContent = Math.floor(current) + suffix;
+        }, 16);
       }
     });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+  document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+  // ── GALLERY LIGHTBOX ──────────────────────────────────────
+  const glb      = document.getElementById('glb');
+  const glbImg   = document.getElementById('glbImg');
+  const glbClose = document.getElementById('glbClose');
+  const glbPrev  = document.getElementById('glbPrev');
+  const glbNext  = document.getElementById('glbNext');
+  const glbCtr   = document.getElementById('glbCounter');
+
+  if (glb && glbImg) {
+    const items = [...document.querySelectorAll('.gallery-item')];
+    let idx = 0;
+
+    const open = (i) => {
+      idx = i;
+      glbImg.src = items[i].dataset.src;
+      glbImg.classList.remove('fade');
+      glb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (glbCtr) glbCtr.textContent = `${i + 1} / ${items.length}`;
+    };
+    const close = () => { glb.classList.remove('open'); document.body.style.overflow = ''; };
+    const goTo = (i) => {
+      idx = (i + items.length) % items.length;
+      glbImg.classList.add('fade');
+      setTimeout(() => {
+        glbImg.src = items[idx].dataset.src;
+        glbImg.classList.remove('fade');
+        if (glbCtr) glbCtr.textContent = `${idx + 1} / ${items.length}`;
+      }, 200);
+    };
+
+    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+    if (glbClose) glbClose.addEventListener('click', close);
+    glb.addEventListener('click', e => { if (e.target === glb) close(); });
+    if (glbPrev) glbPrev.addEventListener('click', () => goTo(idx - 1));
+    if (glbNext) glbNext.addEventListener('click', () => goTo(idx + 1));
+
+    document.addEventListener('keydown', e => {
+      if (!glb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') goTo(idx - 1);
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+
+    let tx = 0;
+    glb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+    glb.addEventListener('touchend', e => {
+      const d = tx - e.changedTouches[0].clientX;
+      if (Math.abs(d) > 50) goTo(idx + (d > 0 ? 1 : -1));
+    });
+  }
+
+  // ── FAQ ACCORDION ────────────────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const a = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.classList.remove('open');
+        b.nextElementSibling.style.maxHeight = '0';
+      });
+      if (!isOpen) { btn.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
 
 });
