@@ -1,8 +1,8 @@
-# Baba Advertisers Srinagar — Website
+# Baba Advertisers Srinagar — Website v3
 
 **Owner:** Mohammad Yamin Baba  
 **Brand:** Baba Advertisers Srinagar | Powered by Baba Prints  
-**Theme:** Olive Green + White (Premium, High Visibility)
+**Theme:** Olive Green + White
 
 ---
 
@@ -10,62 +10,43 @@
 
 ```
 baba-site/
-├── index.html          → Home page (Hero + Services Preview + Stats)
-├── about.html          → About page (Story + Values + Founder + Milestones)
-├── services.html       → Services page (Printing + Design + Event Branding + Packages)
-├── portfolio.html      → Portfolio page (Filterable grid + Lightbox)
-├── contact.html        → Contact page (Form + Info + FAQ)
+├── index.html          → Home page
+├── about.html          → About page
+├── services.html       → Services page
+├── gallery.html        → Gallery page (replaces portfolio)
+├── contact.html        → Contact page
 ├── sitemap.xml         → SEO Sitemap
-├── robots.txt          → Search engine robots file
-├── css/
-│   └── style.css       → Global stylesheet (olive green + white theme)
-├── js/
-│   └── main.js         → Shared JavaScript (preloader, nav, reveal, counters)
+├── robots.txt          → Robots file
+├── css/style.css       → Global stylesheet
+├── js/main.js          → Global JavaScript
 └── images/
-    └── passport.png    ← PLACE YOUR PHOTO HERE
+    ├── logo.png        ← YOUR LOGO HERE (shows in nav, footer, preloader)
+    ├── passport.png    ← YOUR PHOTO HERE (shows in hero/about circles)
+    └── 1.webp … 12.webp ← GALLERY IMAGES HERE
 ```
 
 ---
 
-## 🚀 How to Use
+## 🚀 Setup Steps
 
-1. **Add your photo:** Place `passport.png` inside the `images/` folder
-2. **Open locally:** Double-click `index.html` to preview in browser
-3. **Go live:** Upload all files to any web host (cPanel, Netlify, Vercel, etc.)
-
----
-
-## 🌐 Before Publishing
-
-Update these in all HTML files:
-- Replace `https://babaadvertiserssrinagar.com/` with your actual domain
-- Update `sitemap.xml` URLs to match your domain
-- Update `robots.txt` Sitemap URL
+1. Place `logo.png` in the `images/` folder → appears in navbar, footer, preloader
+2. Place `passport.png` in `images/` → appears in hero circle and about page
+3. Place gallery images as `1.webp`, `2.webp`, … `12.webp` in `images/`
+4. Open `index.html` in browser to preview
+5. Upload all files to web host to go live
 
 ---
 
-## ✨ Features
+## ✅ Features Summary
 
-- ✅ 5 Separate Pages (Home, About, Services, Portfolio, Contact)
-- ✅ Olive Green + White premium theme
-- ✅ Preloader (0.3s, minimal spinner)
-- ✅ Smooth scroll reveal animations
-- ✅ Animated stat counters
-- ✅ Filterable portfolio with lightbox
-- ✅ FAQ accordion on contact page
-- ✅ WhatsApp floating button (pulsing)
-- ✅ Back-to-top button
-- ✅ Fully mobile responsive
-- ✅ SEO meta tags + sitemap + robots.txt
-- ✅ Google Fonts (Cinzel + Lato + Playfair Display)
-- ✅ Auto-loads passport.png if present
-
----
-
-## 📞 Contact Details Included
-
-- Phone: 6006551914 | 9541578008
-- Email: babaadvertiserssrinagar@gmail.com
-- LinkedIn: mohammad-yamin-baba-5975b9311
-- Instagram: @m.yaminbaba
-- Location: Khommoh, Srinagar, 191101
+- Olive green + white premium theme (Cinzel + Lato + Playfair Display fonts)
+- Logo image (logo.png) in navbar, footer, and preloader on ALL pages
+- Preloader: olive-deep green background, 4px progress bar, 0.10s duration
+- Gallery page: dynamic 1.webp–12.webp loader, lightbox, filter tabs
+- Stats: 500+ Projects | 5+ Years | 350+ Clients
+- Google Maps embed (real location: BABA ADVERTISERS)
+- Google Reviews section with 5★ rating
+- WhatsApp floating button
+- AOS scroll animations (fade-up/fade-in)
+- Fully mobile responsive
+- SEO: meta tags + sitemap.xml + robots.txt
