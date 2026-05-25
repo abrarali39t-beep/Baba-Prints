@@ -80,22 +80,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yr) yr.textContent = new Date().getFullYear();
 
   // ABOUT PAGE
-document.querySelectorAll('.about-passport-target').forEach(wrap => {
-  wrap.innerHTML = `
-    <img src="images/passport.png"
-         alt="Mohammad Yamin Baba"
-         style="width:100%;height:100%;object-fit:cover;">
-  `;
-});
+if (document.body.classList.contains('about-page')) {
+  document.querySelectorAll('.passport-img-target').forEach(wrap => {
+    wrap.innerHTML = `
+      <img src="images/passport.png"
+           alt="Mohammad Yamin Baba"
+           style="width:100%;height:100%;object-fit:cover;">
+    `;
+  });
+}
 
-// INDEX PAGE
-document.querySelectorAll('.logo-target').forEach(wrap => {
-  wrap.innerHTML = `
-    <img src="images/logo.png"
-         alt="Logo"
-         style="width:100%;height:100%;object-fit:contain;">
-  `;
-});
+// HOME PAGE
+if (document.body.classList.contains('home-page')) {
+  document.querySelectorAll('.logo-target').forEach(wrap => {
+    wrap.innerHTML = `
+      <img src="images/logo.png"
+           alt="Baba Advertisers Logo"
+           style="width:100%;height:100%;object-fit:contain;padding:28px;">
+    `;
+  });
+}
 
   // ── CONTACT FORM ──────────────────────────────────────────
   const form = document.getElementById('contactForm');
