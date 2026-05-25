@@ -79,14 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const yr = document.getElementById('footerYear');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // ── PASSPORT IMAGE ────────────────────────────────────────
-  document.querySelectorAll('.passport-img-target').forEach(wrap => {
-    const img = new Image();
-    img.onload = () => {
-      wrap.innerHTML = `<img src="images/passport.png" alt="Mohammad Yamin Baba" style="width:100%;height:100%;object-fit:cover;">`;
-    };
-    img.src = 'images/logo.png';
-  });
+  // ABOUT PAGE
+document.querySelectorAll('.about-passport-target').forEach(wrap => {
+  wrap.innerHTML = `
+    <img src="images/passport.png"
+         alt="Mohammad Yamin Baba"
+         style="width:100%;height:100%;object-fit:cover;">
+  `;
+});
+
+// INDEX PAGE
+document.querySelectorAll('.logo-target').forEach(wrap => {
+  wrap.innerHTML = `
+    <img src="images/logo.png"
+         alt="Logo"
+         style="width:100%;height:100%;object-fit:contain;">
+  `;
+});
 
   // ── CONTACT FORM ──────────────────────────────────────────
   const form = document.getElementById('contactForm');
