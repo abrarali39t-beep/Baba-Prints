@@ -90,11 +90,64 @@
       background:var(--olive-dark);
       display:flex; align-items:center; justify-content:center;
     }
+    .img-circle img{
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  display: block;
+}
     .hero-monogram { text-align:center; }
     .hero-monogram-letters { font-family:'Cinzel',serif; font-size:4.5rem; font-weight:900; color:var(--olive-pale); line-height:1; }
     .hero-monogram-sub { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
     @keyframes rotRing { to{ transform:rotate(360deg); } }
 
+    /* GSTIN BELOW HERO IMAGE */
+.hero-image-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-gstin {
+  margin-top: 2.2rem;
+  padding: 0.75rem 1.4rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.gst-label {
+  font-weight: 700;
+  color: var(--olive-pale);
+  text-transform: uppercase;
+}
+
+.gst-number {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .hero-gstin {
+    margin-top: 1.5rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.78rem;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
     /* floating cards around image */
     .hero-card {
       position:absolute;
@@ -231,10 +284,10 @@
     <div class="hero-text" style="animation:fadeUp 0.9s ease both;">
       <div class="hero-badge"><span></span> Srinagar's Premier Branding Studio</div>
       <h1 class="hero-h1">
-        <span class="name-first">Mohammad</span><br>
-        <span class="name-last">Yamin Baba</span>
+        <span class="name-first">BaBa</span><br>
+        <span class="name-last">Advertisers</span>
       </h1>
-      <p class="hero-role">Founder &amp; CEO — Baba Advertisers Srinagar</p>
+      <p class="hero-role">All Printing Solutions Under One Roof</p>
       <div class="hero-tagline-wrap">
         <p class="hero-tagline-main">"Innovation at your fingertips"</p>
         <p class="hero-tagline-sub">Where imagination becomes touchable</p>
@@ -250,28 +303,40 @@
       </div>
     </div>
 
-    <div class="hero-image-side" style="animation:fadeUp 0.9s 0.2s ease both;">
-      <div class="hero-img-frame">
-        <div class="img-ring-outer"></div>
-        <div class="img-ring-inner"></div>
-        <div class="img-circle passport-img-target">
-          <div class="hero-monogram">
-            <div class="hero-monogram-letters">MYB</div>
-            <div class="hero-monogram-sub">Founder &amp; CEO</div>
-          </div>
-        </div>
-        <div class="hero-card hero-card-1">
-          <span class="hero-card-icon">🖨️</span>
-          <div><span class="hero-card-label">Premium Print</span><span class="hero-card-val">High-quality output</span></div>
-        </div>
-        <div class="hero-card hero-card-2">
-          <span class="hero-card-icon">🏆</span>
-          <div><span class="hero-card-label">Award Winning</span><span class="hero-card-val">Trusted in Kashmir</span></div>
-        </div>
+<div class="hero-image-side" style="animation:fadeUp 0.9s 0.2s ease both;">
+  <div class="hero-img-frame">
+    <div class="img-ring-outer"></div>
+    <div class="img-ring-inner"></div>
+
+    <div class="img-circle passport-img-target">
+  <img src="images/logo.png" alt="Baba Advertisers Logo">
+</div>
+
+    <div class="hero-card hero-card-1">
+      <span class="hero-card-icon">🖨️</span>
+      <div>
+        <span class="hero-card-label">Premium Print</span>
+        <span class="hero-card-val">High-quality output</span>
       </div>
     </div>
 
+    <div class="hero-card hero-card-2">
+      <span class="hero-card-icon">🏆</span>
+      <div>
+        <span class="hero-card-label">Award Winning</span>
+        <span class="hero-card-val">Trusted in Kashmir</span>
+      </div>
+    </div>
   </div>
+
+  <!-- ADD THIS -->
+  <div class="hero-gstin">
+    <span class="gst-label">GSTIN:</span>
+    <span class="gst-number">01HQWPB8039K1ZE</span>
+  </div>
+
+</div>
+    
   <div class="scroll-hint">
     <div class="scroll-track"><div class="scroll-dot"></div></div>
     Scroll
