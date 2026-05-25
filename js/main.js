@@ -94,9 +94,20 @@ if (document.body.classList.contains('about-page')) {
 if (document.body.classList.contains('home-page')) {
   document.querySelectorAll('.logo-target').forEach(wrap => {
     wrap.innerHTML = `
-      <img src="images/logo.png"
-           alt="Baba Advertisers Logo"
-           style="width:100%;height:100%;object-fit:contain;padding:28px;">
+      <div style="
+        width:100%;
+        height:100%;
+        background:#fff;
+        border-radius:50%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:24px;
+      ">
+        <img src="images/logo.png"
+             alt="Baba Advertisers Logo"
+             style="width:100%;height:100%;object-fit:contain;display:block;">
+      </div>
     `;
   });
 }
