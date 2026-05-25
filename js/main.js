@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.onload = () => {
       wrap.innerHTML = `<img src="images/passport.png" alt="Mohammad Yamin Baba" style="width:100%;height:100%;object-fit:cover;">`;
     };
-    img.src = 'images/passport.png';
+    img.src = 'images/logo.png';
   });
 
   // ── CONTACT FORM ──────────────────────────────────────────
