@@ -95,6 +95,28 @@
     .hero-monogram-sub { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
     @keyframes rotRing { to{ transform:rotate(360deg); } }
 
+    /* HOME LOGO HERO */
+.logo-target {
+  background: #ffffff !important;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-target img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .logo-target {
+    padding: 18px;
+  }
+}
     /* GSTIN BELOW HERO IMAGE */
 .hero-image-side {
   display: flex;
