@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.passport-img-target').forEach(wrap => {
     const img = new Image();
     img.onload = () => {
-      wrap.innerHTML = `<img src="images/passport.png" alt="Mohammad Yamin Baba" style="width:100%;height:100%;object-fit:cover;">`;
+      wrap.innerHTML = `<img src="images/logo.png" alt="Mohammad Yamin Baba" style="width:100%;height:100%;object-fit:cover;">`;
     };
     img.src = 'images/logo.png';
   });
