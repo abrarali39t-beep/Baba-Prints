@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Clients | Baba Advertisers Srinagar</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #f8f7f2;
+    }
+
+    .clients-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(139,164,70,0.14), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(212,160,23,0.12), transparent 35%),
+        linear-gradient(135deg, #f8f7f2, #ffffff);
+      padding: 5rem 0;
+    }
+
+    .clients-wrap {
+      width: 100%;
+    }
+
+    .clients-title {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: var(--olive-deep);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 4rem;
+    }
+
+    .clients-title::after {
+      content: "";
+      display: block;
+      width: 180px;
+      height: 2px;
+      margin: 1rem auto 0;
+      background: linear-gradient(to right, transparent, var(--olive), transparent);
+    }
+
+    .clients-marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .clients-marquee::before,
+    .clients-marquee::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .clients-marquee::before {
+      left: 0;
+      background: linear-gradient(to right, #f8f7f2, transparent);
+    }
+
+    .clients-marquee::after {
+      right: 0;
+      background: linear-gradient(to left, #f8f7f2, transparent);
+    }
+
+    .clients-track {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      width: max-content;
+      animation: scrollLeft 34s linear infinite;
+    }
+
+    .clients-track.reverse {
+      animation: scrollRight 34s linear infinite;
+    }
+
+    .clients-marquee:hover .clients-track {
+      animation-play-state: paused;
+    }
+
+    .client-box {
+      width: 230px;
+      height: 150px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(85,107,47,0.14);
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      box-shadow: 0 18px 45px rgba(42,52,24,0.12);
+      transition: 0.35s ease;
+      flex-shrink: 0;
+    }
+
+    .client-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: 0.35s ease;
+    }
+
+    .client-box:hover {
+      transform: translateY(-10px) scale(1.04);
+      box-shadow: 0 28px 70px rgba(42,52,24,0.22);
+      border-color: var(--olive);
+    }
+
+    .client-box:hover img {
+      transform: scale(1.08);
+    }
+
+    @keyframes scrollLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollRight {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .clients-page {
+        padding: 4rem 0;
+      }
+
+      .clients-title {
+        margin-bottom: 2.5rem;
+      }
+
+      .client-box {
+        width: 170px;
+        height: 115px;
+        border-radius: 18px;
+        padding: 1rem;
+      }
+
+      .clients-track {
+        gap: 1.2rem;
+        animation-duration: 24s;
+      }
+
+      .clients-track.reverse {
+        animation-duration: 24s;
+      }
+
+      .clients-marquee::before,
+      .clients-marquee::after {
+        width: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="clients-page">
+  <div class="clients-wrap">
+
+    <h1 class="clients-title">Our Clients</h1>
+
+    <div class="clients-marquee">
+      <div class="clients-track">
+        <div class="client-box"><img src="images/logo1.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo2.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo3.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo4.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo5.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo6.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo7.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo8.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo9.jpg" alt="Client Logo"></div>
+
+        <div class="client-box"><img src="images/logo1.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo2.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo3.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo4.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo5.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo6.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo7.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo8.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo9.jpg" alt="Client Logo"></div>
+      </div>
+    </div>
+
+    <div class="clients-marquee">
+      <div class="clients-track reverse">
+        <div class="client-box"><img src="images/logo5.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo6.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo7.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo8.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo9.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo1.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo2.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo3.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo4.jpg" alt="Client Logo"></div>
+
+        <div class="client-box"><img src="images/logo5.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo6.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo7.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo8.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo9.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo1.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo2.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo3.jpg" alt="Client Logo"></div>
+        <div class="client-box"><img src="images/logo4.jpg" alt="Client Logo"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
