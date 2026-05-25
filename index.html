@@ -228,6 +228,113 @@
       .hero-stats{gap:1.5rem;}
       .testi-stats{grid-template-columns:1fr 1fr;}
     }
+    /* CLIENT LOGO SCROLLER */
+.client-strip {
+  background: #fff;
+  padding: 3rem 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.client-title {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--olive-deep);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.client-title::after {
+  content: "";
+  display: block;
+  width: 180px;
+  height: 1px;
+  background: var(--olive);
+  margin: 0.8rem auto 0;
+  opacity: 0.5;
+}
+
+.client-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.client-marquee::before,
+.client-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 90px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.client-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+.client-track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: clientScroll 28s linear infinite;
+}
+
+.client-track:hover {
+  animation-play-state: paused;
+}
+
+.client-track img {
+  width: 130px;
+  height: 75px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: 0.3s ease;
+}
+
+.client-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+@keyframes clientScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media(max-width:640px) {
+  .client-strip {
+    padding: 2.2rem 0;
+  }
+
+  .client-track {
+    gap: 2.5rem;
+    animation-duration: 22s;
+  }
+
+  .client-track img {
+    width: 105px;
+    height: 60px;
+  }
+}
   </style>
 </head>
 <body>
@@ -340,6 +447,36 @@
   </div>
 </section>
 
+  <!-- CLIENT LOGO SCROLLER -->
+<section class="client-strip">
+  <div class="client-title">Our Clients</div>
+
+  <div class="client-marquee">
+    <div class="client-track">
+      <img src="images/logo1.png" alt="Client Logo">
+      <img src="images/logo2.png" alt="Client Logo">
+      <img src="images/logo3.png" alt="Client Logo">
+      <img src="images/logo4.png" alt="Client Logo">
+      <img src="images/logo5.png" alt="Client Logo">
+      <img src="images/logo6.png" alt="Client Logo">
+      <img src="images/logo7.png" alt="Client Logo">
+      <img src="images/logo8.png" alt="Client Logo">
+      <img src="images/logo9.png" alt="Client Logo">
+
+      <!-- duplicate for smooth infinite scroll -->
+      <img src="images/logo1.png" alt="Client Logo">
+      <img src="images/logo2.png" alt="Client Logo">
+      <img src="images/logo3.png" alt="Client Logo">
+      <img src="images/logo4.png" alt="Client Logo">
+      <img src="images/logo5.png" alt="Client Logo">
+      <img src="images/logo6.png" alt="Client Logo">
+      <img src="images/logo7.png" alt="Client Logo">
+      <img src="images/logo8.png" alt="Client Logo">
+      <img src="images/logo9.png" alt="Client Logo">
+    </div>
+  </div>
+</section>
+  
 <!-- ═══════ WHY US ═══════ -->
 <section class="section section-light">
   <div class="container">
