@@ -97,21 +97,20 @@ if (document.body.classList.contains('home-page')) {
       <div style="
         width:100%;
         height:100%;
-        background:#fff;
+        background:#000;
         border-radius:50%;
         display:flex;
         align-items:center;
         justify-content:center;
         padding:24px;
       ">
-        <img src="images/logo.png"
+        <img src="images/bp.png"
              alt="Baba Advertisers Logo"
              style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
     `;
   });
 }
-
   // ── CONTACT FORM ──────────────────────────────────────────
   const form = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
