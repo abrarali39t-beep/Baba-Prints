@@ -149,16 +149,14 @@
         <div class="gs-item"><div class="gs-num"><span class="counter" data-target="500" data-suffix="+">0</span></div><div class="gs-lbl">Projects Completed</div></div>
         <div class="gs-item"><div class="gs-num"><span class="counter" data-target="350" data-suffix="+">0</span></div><div class="gs-lbl">Happy Clients</div></div>
         <div class="gs-item"><div class="gs-num"><span class="counter" data-target="5" data-suffix="+">0</span></div><div class="gs-lbl">Years Experience</div></div>
-        <div class="gs-item"><div class="gs-num"><span class="counter" data-target="12" data-suffix="">0</span></div><div class="gs-lbl">Gallery Images</div></div>
+        <div class="gs-item"><div class="gs-num"><span class="counter" data-target="14" data-suffix="">0</span></div><div class="gs-lbl">Gallery Images</div></div>
       </div>
 
-      <!-- IMAGE GRID — 1.webp … 12.webp loaded dynamically -->
+      <!-- IMAGE GRID — loaded dynamically from Cloudinary -->
       <div class="gallery-grid" id="galleryGrid">
         <!--
-          Images are loaded dynamically from images/ folder.
-          Filenames: 1.webp, 2.webp, ... 12.webp
-          Place your WebP images in the images/ folder.
-          If an image doesn't exist it is silently skipped.
+          Images are loaded dynamically from Cloudinary URLs
+          defined in the script's `images` array below.
         -->
       </div>
 
@@ -332,22 +330,42 @@
 /* ── GALLERY DYNAMIC IMAGE LOADER ── */
 (function() {
   const grid   = document.getElementById('galleryGrid');
-  const total  = 12;
+
+  // Cloudinary-hosted gallery images
+  const images = [
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0066_pwuwra.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589416/IMG-20260708-WA0046_iq3rm4.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589416/IMG-20260708-WA0063_d5dcw6.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0047_z53avp.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589415/IMG-20260708-WA0062_ffbxv8.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0065_ei8dct.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0047_z53avp.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0068_zurxtz.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589417/IMG-20260708-WA0049_wkdquh.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589418/IMG-20260708-WA0050_mvvju7.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589418/IMG-20260708-WA0067_pkxrxb.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589418/IMG-20260708-WA0069_l1ipum.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589418/IMG-20260708-WA0070_y7s5rm.jpg',
+    'https://res.cloudinary.com/dsi8gkiup/image/upload/v1783589419/IMG-20260708-WA0059_jlacwb.jpg'
+  ];
+  const total = images.length;
 
   // Category tags cycling — you can manually assign if you know your images
   const cats = ['printing','design','events','signage','printing','design',
-                 'events','signage','printing','design','events','signage'];
+                 'events','signage','printing','design','events','signage',
+                 'printing','design'];
   const labels = [
     'Printing Work','Brand Design','Event Setup','Outdoor Signage',
     'Business Cards','Logo Design','Stage Branding','Shop Signage',
-    'Flex Banners','Packaging Design','Exhibition Stand','LED Signage'
+    'Flex Banners','Packaging Design','Exhibition Stand','LED Signage',
+    'Print Finishing','Creative Design'
   ];
 
   let loaded = 0;
   const fragments = document.createDocumentFragment();
 
   for (let i = 1; i <= total; i++) {
-    const src  = `images/${i}.webp`;
+    const src  = images[i - 1];
     const cat  = cats[i - 1];
     const lbl  = labels[i - 1];
     const delay = (i - 1) * 60;
